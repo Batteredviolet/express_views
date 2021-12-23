@@ -4,14 +4,14 @@
 <body>
     <%- include('./partials/nav.ejs') %>
     <div class="content create-blog">
-        <form method="POST" action="/blog">
+        <form method="POST" action="/">
             <label for="title">Título</label>
-            <input type="text" name="title" id="title" required>
+            <input type="text" name="title" id="title" value="<%= blog.title %>" required >
             <label for="resume">Resumen</label>
-            <input type="text" name="resume" id="resume" required>
+            <input type="text" name="resume" id="resume" value="<%= blog.resume %>" required>
             <label for="body">Contenido</label>
-            <textarea name="body" id="body"></textarea>
-            <button type="submit">Crear</button>
+            <textarea name="body" id="body"><%= blog.body %></textarea>
+            <button type="submit">Actualizar</button>
         </form>
     </div>
     <%- include("./partials/footer.ejs") %>
